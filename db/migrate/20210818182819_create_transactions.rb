@@ -1,11 +1,12 @@
 class CreateTransactions < ActiveRecord::Migration[6.1]
   def change
     create_table :transactions do |t|
-      t.string :category
-      t.string :account
-      t.string :currency
-      t.datetime :settled
-      t.text :notes
+      t.string :category, default: ''
+      t.string :description, default: ''
+      t.string :account, default: ''
+      t.string :currency, default: ''
+      t.datetime :settled, default: ''
+      t.text :notes, default: ''
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

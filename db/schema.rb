@@ -16,11 +16,12 @@ ActiveRecord::Schema.define(version: 2021_08_18_182819) do
   enable_extension "plpgsql"
 
   create_table "transactions", force: :cascade do |t|
-    t.string "category"
-    t.string "account"
-    t.string "currency"
+    t.string "category", default: ""
+    t.string "description", default: ""
+    t.string "account", default: ""
+    t.string "currency", default: ""
     t.datetime "settled"
-    t.text "notes"
+    t.text "notes", default: ""
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

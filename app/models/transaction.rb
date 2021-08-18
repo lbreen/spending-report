@@ -1,7 +1,7 @@
 class Transaction < ApplicationRecord
   belongs_to :user
 
-  validates :currency, inclusion: { in: 'GBP', 'EUR', 'USD' }
+  validates :currency, inclusion: { in: %w(GBP EUR USD) }
 
-  monetize :price_cents
+  monetize :amount_cents
 end
