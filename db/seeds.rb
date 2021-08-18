@@ -9,7 +9,16 @@
 puts "Seeding DB..."
 
 User.destroy_all
+Transaction.destroy_all
 
 User.create!(email: 'l.b@gmail.com', password: '123456')
+Transaction.create!(amount: '36.65',category: 'Shopping', account: 'Monzo', currency: 'GBP', settled: DateTime.new(2021,8,18,14,05))
+Transaction.create!(amount: '503.34',category: 'Taxi', account: 'Barclays', currency: 'GBP', settled: DateTime.new(2021,8,18,14,05))
+Transaction.create!(amount: '12.34',category: 'Eating Out', account: 'Barclays', currency: 'GBP', settled: DateTime.new(2021,8,18,14,05))
+Transaction.create!(amount: '56.12',category: 'Eating Out', account: 'Monzo', currency: 'GBP', settled: DateTime.new(2021,8,18,14,05))
+Transaction.create!(amount: '78.23',category: 'Groceries', account: 'Monzo', currency: 'GBP', settled: DateTime.new(2021,8,18,14,05))
+Transaction.create!(amount: '50.00',category: 'Shopping', account: 'Monzo', currency: 'GBP', settled: DateTime.new(2021,8,18,14,05))
+
+
 
 puts "Seeding complete!"
