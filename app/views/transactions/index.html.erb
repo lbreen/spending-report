@@ -6,6 +6,8 @@
       </div>
       <div class="links text-right">
         <%= link_to "Export to CSV", transactions_path(format: :csv) %>
+        <%= link_to 'Link to Monzo', monzo_fetch_path %>
+        <%= link_to 'View Monzo accounts', authentications_path %>
       </div>
       <div class="list-transaction">
         <% @transactions.each do |transaction| %>

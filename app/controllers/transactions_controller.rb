@@ -13,6 +13,14 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
   end
 
+  def create
+    transaction = Transaction.new(transaction_params)
+    transaction.user = current_user
+  end
+
+  def edit
+  end
+
   private
 
   def transaction_params
