@@ -4,6 +4,9 @@
       <div class="title">
         <h1>All transactions</h1>
       </div>
+      <div class="links text-right">
+        <%= link_to "Export to CSV", transactions_path(format: :csv) %>
+      </div>
       <div class="list-transaction">
         <% @transactions.each do |transaction| %>
           <%= link_to transaction_path(transaction) do %>
