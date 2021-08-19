@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col" style="padding: 15px 0;">
+      <%= link_to "All transactions", transactions_path %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <h2 style="padding: 20px 0;"><%= @transaction.description %></h2>
+      <p><strong>Category:</strong> <%= @transaction.category %></p>
+      <p><strong>Amount:</strong> <%= humanized_money_with_symbol(@transaction.amount)  %></p>
+      <p><strong>Account:</strong> <%= @transaction.account %></p>
+      <p><strong>Currency:</strong> <%= @transaction.currency %></p>
+      <p><strong>Settled:</strong> <%= @transaction.settled.strftime('%e/%m/%y %H:%M') %></p>
+      <p><strong>Notes:</strong> <%= @transaction.notes %></p>
+    </div>
+  </div>
+</div>

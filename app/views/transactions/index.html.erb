@@ -6,13 +6,15 @@
       </div>
       <div class="list-transaction">
         <% @transactions.each do |transaction| %>
-          <div class="card-transaction">
-            <img src="/" alt="<%= transaction.account %>">
-            <div class="card-transaction-infos">
-              <h2><%= transaction.description %></h2>
-              <p><%= humanized_money_with_symbol(transaction.amount) %></p>
+          <%= link_to transaction_path(transaction) do %>
+            <div class="card-transaction">
+              <img src="/" alt="<%= transaction.account %>">
+              <div class="card-transaction-infos">
+                <h2><%= transaction.description %></h2>
+                <p><%= humanized_money_with_symbol(transaction.amount) %></p>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>

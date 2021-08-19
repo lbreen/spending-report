@@ -4,6 +4,10 @@ class TransactionsController < ApplicationController
     @transactions = Transaction.where(user: current_user)
   end
 
+  def show
+    @transaction = Transaction.find(params[:id])
+  end
+
   private
 
   def transaction_params
